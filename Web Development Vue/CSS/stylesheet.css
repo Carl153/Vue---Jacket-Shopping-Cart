@@ -4,7 +4,7 @@ body {
   color: #282828;
   margin: 0px;
 }
-
+  /* Styles and formats the nav-bar at the top of the screen. */
 .nav-bar {
   background: linear-gradient(-90deg, #4d8ee4, #2fe77c);
   height: 3.75em;
@@ -28,7 +28,7 @@ body {
   cursor: pointer;
   color: #fff;
 }
-
+  /* This part of CSS styles and formats the cart section. */
 .cart-content {
   z-index: 1;
   position: absolute;
@@ -110,7 +110,7 @@ img {
   overflow: hidden;
   cursor: pointer;
 }
-
+  /* This section styles the button used to add products to the cart. */
 .button {
   border: none;
   background-color: #1E95EA;
@@ -160,7 +160,7 @@ input {
 input[type="submit"] {
   cursor: pointer;
 }
-
+  /* Styles the review section. */
 textarea {
   width: 100%;
   border: 1px dotted #aaa;
@@ -172,7 +172,7 @@ textarea {
   list-style-type: none;
   border-bottom: 1px solid #aaa;
 }
-
+  /* Formats and styles the "Add Review" box. */
 .tab {
   cursor: pointer;
   background-color: rgb(147, 248, 155);
@@ -184,7 +184,7 @@ textarea {
   position: relative;
   border-bottom: none;
 }
-
+ /* Formats and styles the "Review" box */
 .activeTab {
   background-color: rgb(127, 215, 250);
   text-decoration: none;

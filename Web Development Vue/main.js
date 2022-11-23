@@ -1,7 +1,7 @@
 // Event bus 
 var eventBus = new Vue()
 
-// Products template called from html which displays the products.
+// Products template called from the HTML file which displays the products.
 Vue.component('product', {
   props: {
     premium: {
@@ -54,7 +54,7 @@ Vue.component('product', {
 
     </div>
   `,
-  data() { // This part of code displays all the information for the products on the website.
+  data() { // Vue data structure, with indexed variants.
     return {
       product: 'Designer Jackets',
       description: 'A wide range of designer jackets available in multiple colours!',
@@ -125,8 +125,7 @@ Vue.component('product', {
       this.selectedVariant = index;
     }
   },
-  /* if-else statement that calculates the stock on hand for a product and then displays
-     the corresponding text based on the qty*/
+  /* if-else statement, calculates stock and returns a message with the remaining stock */
   computed: {
     image() {
       return this.variants[this.selectedVariant].variantImage;
@@ -144,12 +143,12 @@ Vue.component('product', {
       } else if (quantity <= 10 && quantity > 1 ) {
         return 'Almost sold out!';
       } else if (quantity == 1 ) {
-        return 'Hurry! Just 1 item is available!';
+        return 'Only 1 left! Be quick!';
       } else {
         return 'Out of stock. 🙁'
       }
     },
-    /* calculates the shipping price and displays a message*/
+    /* Calculates the shipping price and displays a the price as a message. */
     shipping() {
       if (this.premium) {
         return "Free";
@@ -162,7 +161,7 @@ Vue.component('product', {
     eventBus.$on('review-submitted', productReview => {
       this.reviews.push(productReview);
     }),
-    /* if a cart item is deleted this will add the product back into the stock */
+    /* If a cart item is deleted this will add the product back into stock. */
     eventBus.$on('cart-item-deleted', variant => {
       for (let index = 0, max = this.variants.length; index < max; index++) {
         const currentVarinat = this.variants[index];
@@ -176,7 +175,7 @@ Vue.component('product', {
   }
 })
 
-// Review template used for the review section, called from the html section.
+// Review template used for the review section, called from the HTML file.
 Vue.component('add-review', {
   template: `
     <form class="review-form" @submit.prevent="onSubmit">
@@ -227,8 +226,7 @@ Vue.component('add-review', {
       errors: [],
     }
   },
-  // this part of code relates to the review section at the bottom of the page, tells the user to enter required 
-  // information before the review can be submitted
+  // Method displays an error if the user tries to submit a review without placing a rating first.
   methods: {
     onSubmit() {
       this.errors = [];
@@ -301,7 +299,7 @@ Vue.component('product-tabs', {
   }
 })
 
-// Cart-content and template called from html to layout the cart contents
+// Cart content and template called from HTML to layout the contents inside the cart. 
 Vue.component('cart-content', {
   props: {
     showCartContent: {

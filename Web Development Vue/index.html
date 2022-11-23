@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <head>
-    <!-- Links the css file to the html -->
+    <!-- Links the CSS file to the HTML -->
     <link rel="stylesheet" href="CSS/stylesheet.css">
 
 </head>
 <body>
-    <!-- displays the message if the cart is empty in the top right hand side of the navbar -->
+    <!-- Displays the cart in the navbar - linked in javascript -->
     <div id="app">
       <div class="nav-bar">
         <div class="nav-bar__inner">
@@ -17,7 +17,7 @@
           </button>
         </div>        
       </div>
-      <!--displays the cart contents -->
+      <!-- Displays the cart contents -->
       <cart-content 
         :show-cart-content="showCartContent"
         :items="cart"
@@ -27,9 +27,9 @@
     </div>
   
     <footer>
-      <p>Thanks for shopping with us!</p>
+      <p>We value your patronage!</p>
     </footer>
-    <!-- links the java file to the html file -->
+    <!-- Links the javascript file to HTML, found in the folder structure -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
     <script src="main.js"></script>
   </body>
