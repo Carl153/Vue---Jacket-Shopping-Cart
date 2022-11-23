@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<head>
+    <!-- Links the CSS file to the HTML -->
+    <link rel="stylesheet" href="CSS/stylesheet.css">
+
+</head>
+<body>
+    <!-- Displays the cart in the navbar - linked in javascript -->
+    <div id="app">
+      <div class="nav-bar">
+        <div class="nav-bar__inner">
+          <button @click="toggleCartContent" 
+                  class="cart" 
+                  title="Show or hide cart content.">
+            <span v-if="cart.length">In Cart: {{ cart.length }}</span>
+            <span v-else>Your cart is empty. 😞</span>
+          </button>
+        </div>        
+      </div>
+      <!-- Displays the cart contents -->
+      <cart-content 
+        :show-cart-content="showCartContent"
+        :items="cart"
+      ></cart-content>
+      
+      <product :premium="premium" @add-to-cart="updateCart"></product>
+    </div>
+  
+    <footer>
+      <p>We value your patronage!</p>
+    </footer>
+    <!-- Links the javascript file to HTML, found in the folder structure -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+    <script src="main.js"></script>
+  </body>
+</html>
